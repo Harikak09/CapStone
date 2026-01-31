@@ -8,4 +8,28 @@
 
 .terraform.lock.hcl
 
+# Vim temporary files
 
+*.swp
+
+*.swo
+
+*~
+
+
+
+# Python cache
+
+__pycache__/
+
+*.pyc
+
+
+
+# Docker
+
+*.log
+
+# hide pem file
+
+*.pem
