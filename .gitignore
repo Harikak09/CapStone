@@ -33,3 +33,7 @@ __pycache__/
 # hide pem file
 
 *.pem
+
+#hide ansible retry files
+
+*.retry
