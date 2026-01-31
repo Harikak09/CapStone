@@ -1,0 +1,37 @@
+name: GitOps Infra Deployment 
+
+on: 
+  push: 
+    branches: 
+      - main 
+
+jobs: 
+  terraform-apply:
+    runs-on: ubuntu-latest 
+    environment: testing 
+    steps: 
+      - name: Checkout code 
+        uses: actions/checkout@v3 
+      - name: Setup terraform 
+        uses: hashicorp/setup-terraform@v3 
+      - name: Configure with the AWS creds 
+        uses: aws-actions/configure-aws-credentials@v5.1.1 
+        with: 
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }} 
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }} 
+          aws-region: eu-west-1 
+      - name: Terraform fmt 
+        run: terraform fmt -recursive 
+        working-directory: project18/terraform 
+      - name: Terraform init 
+        run: terraform init -input=false 
+        working-directory: project18/terraform 
+      - name: Terraform validate 
+        run: terraform validate -no-color 
+        working-directory: project18/terraform 
+      - name: Terraform Plan 
+        run: terraform plan -out=tfplan -no-color -input=false 
+        working-directory: project18/terraform 
+      - name: Terraform apply 
+        run: terraform apply "tfplan" 
+        working-directory: project18/terraform 
