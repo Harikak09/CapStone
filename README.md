@@ -1,0 +1,1 @@
+[![CI Validation for Terraform](https://github.com/Harikak09/CapStone/actions/workflows/project7_trigger.yaml/badge.svg)](https://github.com/Harikak09/CapStone/actions/workflows/project7_trigger.yaml)
