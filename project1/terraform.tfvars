@@ -1,3 +1,3 @@
-key_name = "Neeharika_Terraform"
+key_name = "harika_terraform"
 
-private_key_path = "./Neeharika_Terraform.pem"
+private_key_path = "./harika_terraform.pem"

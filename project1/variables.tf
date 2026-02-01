@@ -2,7 +2,7 @@ variable "private_key_path"{
 
   type = string
 
-  default = "./Neeharika_Terraform.pem"
+  default = "./harika_terraform.pem"
 
 }
 
@@ -12,6 +12,6 @@ variable "key_name" {
 
   description = "key name"
 
-  default = "Neeharika_Terraform"
+  default = "harika_terraform"
 
 }
