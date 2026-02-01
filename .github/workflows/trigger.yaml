@@ -4,6 +4,8 @@ on:
   push: 
     branches: 
       - main 
+    paths:
+      - 'project18/**'
 
 jobs: 
   terraform-apply:
