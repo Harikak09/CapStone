@@ -1,0 +1,25 @@
+name: CI Validation for Terraform
+  
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  terraform-apply:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup terraform
+        uses: hashicorp/setup-terraform@v3
+      - name: Terraform fmt
+        run: terraform fmt -recursive
+        working-directory: project7/terraform
+      - name: Terraform init
+        run: terraform init -input=false
+        working-directory: project7/terraform
+      - name: Terraform validate
+        run: terraform validate -no-color
+        working-directory: project7/terraform
+
