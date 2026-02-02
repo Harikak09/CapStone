@@ -1,6 +1,8 @@
 # Incident Note
 
-Incident: Docker container stopped - manual chaos test
+Date of Incidence: Feb 2, 2026
+
+Incident: Docker container stopped ( manual chaos test)
 
 Description:
 A Docker container running an Nginx application was intentionally stopped to simulate a service failure and observe recovery behavior.
@@ -17,4 +19,8 @@ Recovery:
 - Application availability restored successfully
 
 Time to Recovery:
-- Approximately 1 minute
+- Less than 1 minute
+
+Verification:
+- Container status confirmed as running using `docker ps`
+- Container responded successfully after restart
